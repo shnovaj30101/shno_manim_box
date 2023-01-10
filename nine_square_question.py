@@ -10,6 +10,11 @@ class question_19(Scene):
 
         # self.add(number_plane)
 
+        title = Tex("Problem 19.").scale(2).move_to(UP*3+RIGHT*3)
+        self.play(
+            FadeIn(title),
+        )
+
         s1 = NineSquare(self, chess_pos = [
             [0, 1, 1],
             [0, 0, 1],
