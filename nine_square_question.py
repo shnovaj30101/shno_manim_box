@@ -11,9 +11,20 @@ class question_19(Scene):
         # self.add(number_plane)
 
         title = Tex("Problem 19.").scale(2).move_to(UP*3+RIGHT*3)
+
+        s5 = NineSquare(self, chess_pos = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0],
+            ], square_h=1.2, square_w=1.2, chess_color = Colors.red.value)
+        s5.move_to(RIGHT*3)
+        t5 = Tex("None").next_to(s5.line_vgroup, DOWN * 2)
         self.play(
+            s5.display(),
+            FadeIn(t5),
             FadeIn(title),
         )
+
 
         s1 = NineSquare(self, chess_pos = [
             [0, 1, 1],
@@ -106,18 +117,6 @@ class question_19(Scene):
             ReplacementTransform(t4_2, t4_3),
         )
         self.wait(0.5)
-
-        s5 = NineSquare(self, chess_pos = [
-            [0, 0, 0],
-            [0, 0, 0],
-            [0, 0, 0],
-            ], square_h=1.2, square_w=1.2, chess_color = Colors.red.value)
-        s5.move_to(RIGHT*3)
-        t5 = Tex("None").next_to(s5.line_vgroup, DOWN * 2)
-        self.play(
-            s5.display(),
-            FadeIn(t5),
-        )
 
         t5_1 = Tex("E").next_to(s5.line_vgroup, DOWN * 2)
         self.play(
