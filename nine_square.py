@@ -221,7 +221,7 @@ class NineSquare:
         for row_idx, col_idx in it.product(range(3), range(3)):
             chess_vgroup.add(*self.mobject_pos[row_idx][col_idx])
 
-        self.scene.play(FadeIn(chess_vgroup))
+        return FadeIn(chess_vgroup)
 
     def move_to(self, pos):
         shift_dir = pos - self.line_vgroup.get_center()
